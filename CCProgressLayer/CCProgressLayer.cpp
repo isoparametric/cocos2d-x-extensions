@@ -21,7 +21,7 @@ THE SOFTWARE.
 ****************************************************************************/
 
 #include "CCProgressLayer.h"
-#include "CCActivityIndicator.h"
+#include "../CCActivityIndicator/CCActivityIndicator.h"
 
 USING_NS_CC;
 
