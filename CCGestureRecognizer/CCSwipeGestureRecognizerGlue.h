@@ -1,6 +1,6 @@
 /*
 ** Lua binding: CCSwipeGestureRecognizer
-** Generated automatically by tolua++-1.0.92 on Tue Oct  8 11:24:00 2013.
+** Generated automatically by tolua++-1.0.92 on Tue Oct  8 11:30:35 2013.
 */
 
 /* Exported function */

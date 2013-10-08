@@ -1,6 +1,6 @@
 /*
 ** Lua binding: CCSwipeGestureRecognizer
-** Generated automatically by tolua++-1.0.92 on Tue Oct  8 11:24:00 2013.
+** Generated automatically by tolua++-1.0.92 on Tue Oct  8 11:30:35 2013.
 */
 
 /****************************************************************************
@@ -58,72 +58,12 @@ static void tolua_reg_types (lua_State* tolua_S)
  tolua_usertype(tolua_S,"CCSwipe");
  tolua_usertype(tolua_S,"CCSwipeGestureRecognizer");
  tolua_usertype(tolua_S,"CCGestureRecognizer");
- tolua_usertype(tolua_S,"CCLayer");
+ tolua_usertype(tolua_S,"CCPoint");
  
- tolua_usertype(tolua_S,"cocos2d::CCPoint");
+ tolua_usertype(tolua_S,"CCLayer");
  tolua_usertype(tolua_S,"CCSwipeGestureRecognizerLua");
  tolua_usertype(tolua_S,"cocos2d::CCObject");
 }
-
-/* method: init of class  CCSwipeGestureRecognizer */
-#ifndef TOLUA_DISABLE_tolua_CCSwipeGestureRecognizer_CCSwipeGestureRecognizer_init00
-static int tolua_CCSwipeGestureRecognizer_CCSwipeGestureRecognizer_init00(lua_State* tolua_S)
-{
-#ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertype(tolua_S,1,"CCSwipeGestureRecognizer",0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,2,&tolua_err)
- )
-  goto tolua_lerror;
- else
-#endif
- {
-  CCSwipeGestureRecognizer* self = (CCSwipeGestureRecognizer*)  tolua_tousertype(tolua_S,1,0);
-#ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'init'", NULL);
-#endif
-  {
-   bool tolua_ret = (bool)  self->init();
-   tolua_pushboolean(tolua_S,(bool)tolua_ret);
-  }
- }
- return 1;
-#ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'init'.",&tolua_err);
- return 0;
-#endif
-}
-#endif //#ifndef TOLUA_DISABLE
-
-/* method: create of class  CCSwipeGestureRecognizer */
-#ifndef TOLUA_DISABLE_tolua_CCSwipeGestureRecognizer_CCSwipeGestureRecognizer_create00
-static int tolua_CCSwipeGestureRecognizer_CCSwipeGestureRecognizer_create00(lua_State* tolua_S)
-{
-#ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertable(tolua_S,1,"CCSwipeGestureRecognizer",0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,2,&tolua_err)
- )
-  goto tolua_lerror;
- else
-#endif
- {
-  {
-   CCSwipeGestureRecognizer* tolua_ret = (CCSwipeGestureRecognizer*)  CCSwipeGestureRecognizer::create();
-    tolua_pushusertype(tolua_S,(void*)tolua_ret,"CCSwipeGestureRecognizer");
-  }
- }
- return 1;
-#ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'create'.",&tolua_err);
- return 0;
-#endif
-}
-#endif //#ifndef TOLUA_DISABLE
 
 /* method: create of class  CCSwipeGestureRecognizerLua */
 #ifndef TOLUA_DISABLE_tolua_CCSwipeGestureRecognizer_CCSwipeGestureRecognizerLua_create00
@@ -283,38 +223,6 @@ static int tolua_CCSwipeGestureRecognizer_CCSwipeGestureRecognizerLua_setCancels
 }
 #endif //#ifndef TOLUA_DISABLE
 
-/* method: init of class  CCSwipe */
-#ifndef TOLUA_DISABLE_tolua_CCSwipeGestureRecognizer_CCSwipe_init00
-static int tolua_CCSwipeGestureRecognizer_CCSwipe_init00(lua_State* tolua_S)
-{
-#ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertype(tolua_S,1,"CCSwipe",0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,2,&tolua_err)
- )
-  goto tolua_lerror;
- else
-#endif
- {
-  CCSwipe* self = (CCSwipe*)  tolua_tousertype(tolua_S,1,0);
-#ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'init'", NULL);
-#endif
-  {
-   bool tolua_ret = (bool)  self->init();
-   tolua_pushboolean(tolua_S,(bool)tolua_ret);
-  }
- }
- return 1;
-#ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'init'.",&tolua_err);
- return 0;
-#endif
-}
-#endif //#ifndef TOLUA_DISABLE
-
 /* get function: direction of class  CCSwipe */
 #ifndef TOLUA_DISABLE_tolua_get_CCSwipe_direction
 static int tolua_get_CCSwipe_direction(lua_State* tolua_S)
@@ -353,7 +261,7 @@ static int tolua_get_CCSwipe_location(lua_State* tolua_S)
 #ifndef TOLUA_RELEASE
   if (!self) tolua_error(tolua_S,"invalid 'self' in accessing variable 'location'",NULL);
 #endif
-   tolua_pushusertype(tolua_S,(void*)&self->location,"cocos2d::CCPoint");
+   tolua_pushusertype(tolua_S,(void*)&self->location,"CCPoint");
  return 1;
 }
 #endif //#ifndef TOLUA_DISABLE
@@ -366,40 +274,12 @@ static int tolua_set_CCSwipe_location(lua_State* tolua_S)
 #ifndef TOLUA_RELEASE
   tolua_Error tolua_err;
   if (!self) tolua_error(tolua_S,"invalid 'self' in accessing variable 'location'",NULL);
-  if ((tolua_isvaluenil(tolua_S,2,&tolua_err) || !tolua_isusertype(tolua_S,2,"cocos2d::CCPoint",0,&tolua_err)))
+  if ((tolua_isvaluenil(tolua_S,2,&tolua_err) || !tolua_isusertype(tolua_S,2,"CCPoint",0,&tolua_err)))
    tolua_error(tolua_S,"#vinvalid type in variable assignment.",&tolua_err);
 #endif
-  self->location = *((cocos2d::CCPoint*)  tolua_tousertype(tolua_S,2,0))
+  self->location = *((CCPoint*)  tolua_tousertype(tolua_S,2,0))
 ;
  return 0;
-}
-#endif //#ifndef TOLUA_DISABLE
-
-/* method: create of class  CCSwipe */
-#ifndef TOLUA_DISABLE_tolua_CCSwipeGestureRecognizer_CCSwipe_create00
-static int tolua_CCSwipeGestureRecognizer_CCSwipe_create00(lua_State* tolua_S)
-{
-#ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertable(tolua_S,1,"CCSwipe",0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,2,&tolua_err)
- )
-  goto tolua_lerror;
- else
-#endif
- {
-  {
-   CCSwipe* tolua_ret = (CCSwipe*)  CCSwipe::create();
-    tolua_pushusertype(tolua_S,(void*)tolua_ret,"CCSwipe");
-  }
- }
- return 1;
-#ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'create'.",&tolua_err);
- return 0;
-#endif
 }
 #endif //#ifndef TOLUA_DISABLE
 
@@ -419,8 +299,6 @@ TOLUA_API int tolua_CCSwipeGestureRecognizer_open (lua_State* tolua_S)
   tolua_endmodule(tolua_S);
   tolua_cclass(tolua_S,"CCSwipeGestureRecognizer","CCSwipeGestureRecognizer","CCGestureRecognizer",NULL);
   tolua_beginmodule(tolua_S,"CCSwipeGestureRecognizer");
-   tolua_function(tolua_S,"init",tolua_CCSwipeGestureRecognizer_CCSwipeGestureRecognizer_init00);
-   tolua_function(tolua_S,"create",tolua_CCSwipeGestureRecognizer_CCSwipeGestureRecognizer_create00);
   tolua_endmodule(tolua_S);
   tolua_cclass(tolua_S,"CCSwipeGestureRecognizerLua","CCSwipeGestureRecognizerLua","CCSwipeGestureRecognizer",NULL);
   tolua_beginmodule(tolua_S,"CCSwipeGestureRecognizerLua");
@@ -432,10 +310,8 @@ TOLUA_API int tolua_CCSwipeGestureRecognizer_open (lua_State* tolua_S)
   tolua_endmodule(tolua_S);
   tolua_cclass(tolua_S,"CCSwipe","CCSwipe","cocos2d::CCObject",NULL);
   tolua_beginmodule(tolua_S,"CCSwipe");
-   tolua_function(tolua_S,"init",tolua_CCSwipeGestureRecognizer_CCSwipe_init00);
    tolua_variable(tolua_S,"direction",tolua_get_CCSwipe_direction,tolua_set_CCSwipe_direction);
    tolua_variable(tolua_S,"location",tolua_get_CCSwipe_location,tolua_set_CCSwipe_location);
-   tolua_function(tolua_S,"create",tolua_CCSwipeGestureRecognizer_CCSwipe_create00);
   tolua_endmodule(tolua_S);
  tolua_endmodule(tolua_S);
  return 1;

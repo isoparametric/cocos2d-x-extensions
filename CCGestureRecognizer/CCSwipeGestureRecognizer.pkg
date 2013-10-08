@@ -22,9 +22,6 @@ class CCGestureRecognizer : public CCLayer
 
 class CCSwipeGestureRecognizer : public CCGestureRecognizer
 {
-public:
-    bool init();
-    static CCSwipeGestureRecognizer* create();
 
 };
 
@@ -43,9 +40,7 @@ public:
 class CCSwipe : public cocos2d::CCObject
 {
 public:
-    bool init();
     CCSwipeGestureRecognizerDirection direction;
-    cocos2d::CCPoint location;
-    static CCSwipe* create();
+    CCPoint location;
 };
 
