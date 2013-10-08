@@ -2,6 +2,9 @@
 $#include "cocos2d.h"
 $#include "platform/CCPlatformMacros.h"
 $#include "cocos2d-x-extensions/CCGestureRecognizer/CCSwipeGestureRecognizer.h"
+$#include "cocos2d-x-extensions/CCGestureRecognizer/CCSwipeGestureRecognizerLua.h"
+
+$#include "CCLuaValue.h"
 
 $USING_NS_CC;
 
@@ -12,51 +15,37 @@ typedef enum {
     kSwipeGestureRecognizerDirectionDown  = 1 << 3
 } CCSwipeGestureRecognizerDirection;
 
-class CCSwipe : public cocos2d::CCObject
+class CCGestureRecognizer : public CCLayer
 {
-public:
-    bool init();
-    CCSwipeGestureRecognizerDirection direction;
-    cocos2d::CCPoint location;
-    static CCSwipe* create()
-    {
-        CCSwipe *pRet = new CCSwipe();
-        if (pRet && pRet->init())
-        {
-            pRet->autorelease();
-            return pRet;
-        }
-        else
-        {
-            delete pRet;
-            pRet = NULL;
-            return NULL;
-        }
-    }
+
 };
 
 class CCSwipeGestureRecognizer : public CCGestureRecognizer
 {
 public:
     bool init();
-    ~CCSwipeGestureRecognizer();
-    static CCSwipeGestureRecognizer* create()
-    {
-        CCSwipeGestureRecognizer *pRet = new CCSwipeGestureRecognizer();
-        if (pRet && pRet->init())
-        {
-            pRet->autorelease();
-            return pRet;
-        }
-        else
-        {
-            delete pRet;
-            pRet = NULL;
-            return NULL;
-        }
-    }
+    static CCSwipeGestureRecognizer* create();
 
-    virtual bool ccTouchBegan(cocos2d::CCTouch * pTouch, cocos2d::CCEvent * pEvent);
-    virtual void ccTouchMoved(cocos2d::CCTouch * pTouch, cocos2d::CCEvent * pEvent){};
-    virtual void ccTouchEnded(cocos2d::CCTouch * pTouch, cocos2d::CCEvent * pEvent);
 };
+
+class CCSwipeGestureRecognizerLua : public CCSwipeGestureRecognizer
+{
+public:
+    static CCSwipeGestureRecognizerLua* create();
+
+    void registerScriptSwipeHandler(LUA_FUNCTION funcID);
+    void unregisterScriptSwipeHandler(void);
+
+    void setDirection(int direction);
+    void setCancelsTouchesInView(bool cancelsTouchesInView);
+};
+
+class CCSwipe : public cocos2d::CCObject
+{
+public:
+    bool init();
+    CCSwipeGestureRecognizerDirection direction;
+    cocos2d::CCPoint location;
+    static CCSwipe* create();
+};
+
