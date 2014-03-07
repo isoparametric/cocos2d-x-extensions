@@ -1,2 +1,4 @@
 CCGestureRecognizer/CCSwipeGestureRecognizerGlue.cpp
 CCGestureRecognizer/CCSwipeGestureRecognizerGlue.h
+CCGestureRecognizer/CCLongPressGestureRecognizerGlue.cpp
+CCGestureRecognizer/CCLongPressGestureRecognizerGlue.h

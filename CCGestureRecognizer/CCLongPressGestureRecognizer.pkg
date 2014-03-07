@@ -1,0 +1,34 @@
+
+$#include "cocos2d.h"
+$#include "platform/CCPlatformMacros.h"
+$#include "cocos2d-x-extensions/CCGestureRecognizer/CCLongPressGestureRecognizer.h"
+$#include "cocos2d-x-extensions/CCGestureRecognizer/CCLongPressGestureRecognizerLua.h"
+
+$#include "CCLuaValue.h"
+
+$USING_NS_CC;
+
+class CCGestureRecognizer : public CCLayer
+{
+
+};
+
+class CCLongPressGestureRecognizer : public CCGestureRecognizer
+{
+};
+
+class CCLongPressGestureRecognizerLua : public CCGestureRecognizer
+{
+public:
+    static CCLongPressGestureRecognizerLua* create();
+
+    void registerScriptLongPressHandler(LUA_FUNCTION funcID);
+    void unregisterScriptLongPressHandler(void);
+};
+
+class CCLongPress : public cocos2d::CCObject
+{
+public:
+    CCPoint location;
+};
+
