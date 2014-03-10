@@ -36,7 +36,9 @@ CCGestureRecognizer::CCGestureRecognizer()
 
 CCGestureRecognizer::~CCGestureRecognizer()
 {
-    dispatcher->removeDelegate(this);
+    CC_ASSERT(retainCount() == 0);
+// デストラクタから removeDelegate 呼ばれて release が走ったら m_uReference が 0 未満になって怒られますよ?
+//    dispatcher->removeDelegate(this);
 }
 
 void CCGestureRecognizer::setTarget(CCObject * tar, SEL_CallFuncO sel)
@@ -79,7 +81,7 @@ CCSet * CCGestureRecognizer::createSetWithTouch(CCTouch * pTouch)
 
 void CCGestureRecognizer::registerWithTouchDispatcher()
 {
-    dispatcher->addTargetedDelegate(this, -256, false);
+    CCLayer::registerWithTouchDispatcher();
 }
 
 bool CCGestureRecognizer::isPositionBetweenBounds(CCPoint pos)

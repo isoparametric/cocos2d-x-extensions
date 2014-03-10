@@ -47,9 +47,9 @@ void CCLongPressGestureRecognizerLua::unregisterScriptLongPressHandler(void)
 
 bool CCLongPressGestureRecognizerLua::ccTouchBegan(CCTouch * pTouch, CCEvent * pEvent)
 {
-    bool result = CCLayer::ccTouchBegan(pTouch, pEvent);
     CCLongPressGestureRecognizer::ccTouchBegan(pTouch, pEvent);
-    return result;
+    CCLayer::ccTouchBegan(pTouch, pEvent);
+    return true;
 }
 
 void CCLongPressGestureRecognizerLua::ccTouchMoved(CCTouch * pTouch, CCEvent * pEvent)
@@ -59,6 +59,6 @@ void CCLongPressGestureRecognizerLua::ccTouchMoved(CCTouch * pTouch, CCEvent * p
 
 void CCLongPressGestureRecognizerLua::ccTouchEnded(CCTouch * pTouch, CCEvent * pEvent)
 {
-    CCLongPressGestureRecognizer::ccTouchEnded(pTouch, pEvent);
     CCLayer::ccTouchEnded(pTouch, pEvent);
+    CCLongPressGestureRecognizer::ccTouchEnded(pTouch, pEvent);
 }
