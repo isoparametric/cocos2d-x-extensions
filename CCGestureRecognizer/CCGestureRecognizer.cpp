@@ -81,7 +81,7 @@ CCSet * CCGestureRecognizer::createSetWithTouch(CCTouch * pTouch)
 
 void CCGestureRecognizer::registerWithTouchDispatcher()
 {
-    CCLayer::registerWithTouchDispatcher();
+    dispatcher->addTargetedDelegate(this, -256, false);
 }
 
 bool CCGestureRecognizer::isPositionBetweenBounds(CCPoint pos)

@@ -19,6 +19,7 @@ public:
     virtual void ccTouchMoved(cocos2d::CCTouch * pTouch, cocos2d::CCEvent * pEvent);
     virtual void ccTouchEnded(cocos2d::CCTouch * pTouch, cocos2d::CCEvent * pEvent);
 
+    virtual void registerWithTouchDispatcher(void);
 private:
     virtual bool init();
     void didLongPress(CCObject* longpress);

@@ -31,6 +31,11 @@ void CCLongPressGestureRecognizerLua::didLongPress(CCObject* longpress)
     }
 }
 
+void CCLongPressGestureRecognizerLua::registerWithTouchDispatcher()
+{
+    CCLayer::registerWithTouchDispatcher();
+}
+
 void CCLongPressGestureRecognizerLua::registerScriptLongPressHandler(int nHandler)
 {
     unregisterScriptLongPressHandler();
