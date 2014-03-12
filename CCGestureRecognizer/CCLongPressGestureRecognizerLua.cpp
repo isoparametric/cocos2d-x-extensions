@@ -64,6 +64,8 @@ void CCLongPressGestureRecognizerLua::ccTouchMoved(CCTouch * pTouch, CCEvent * p
 
 void CCLongPressGestureRecognizerLua::ccTouchEnded(CCTouch * pTouch, CCEvent * pEvent)
 {
-    CCLayer::ccTouchEnded(pTouch, pEvent);
-    CCLongPressGestureRecognizer::ccTouchEnded(pTouch, pEvent);
+    if (isRecognizing) {
+        CCLongPressGestureRecognizer::ccTouchEnded(pTouch, pEvent);
+        CCLayer::ccTouchEnded(pTouch, pEvent);
+    }
 }
