@@ -20,6 +20,8 @@ public:
     virtual void ccTouchEnded(cocos2d::CCTouch * pTouch, cocos2d::CCEvent * pEvent);
 
     virtual void registerWithTouchDispatcher(void);
+
+    virtual bool isPositionBetweenBounds(cocos2d::CCPoint pos);
 private:
     virtual bool init();
     void didLongPress(CCObject* longpress);

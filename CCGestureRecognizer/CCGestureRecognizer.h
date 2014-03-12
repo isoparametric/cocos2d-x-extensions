@@ -42,7 +42,7 @@ protected:
     void stopTouchesPropagation(cocos2d::CCSet * pTouches, cocos2d::CCEvent * pEvent);
     
     //utility methods
-    bool isPositionBetweenBounds(cocos2d::CCPoint pos);
+    virtual bool isPositionBetweenBounds(cocos2d::CCPoint pos);
     float distanceBetweenPoints(cocos2d::CCPoint p1, cocos2d::CCPoint p2);
     cocos2d::CCSet * createSetWithTouch(cocos2d::CCTouch * pTouch);
     

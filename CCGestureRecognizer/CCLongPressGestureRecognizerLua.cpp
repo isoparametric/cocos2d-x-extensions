@@ -50,6 +50,13 @@ void CCLongPressGestureRecognizerLua::unregisterScriptLongPressHandler(void)
     }
 }
 
+bool CCLongPressGestureRecognizerLua::isPositionBetweenBounds(CCPoint pos)
+{
+    cocos2d::CCRect rect(frame);
+    rect.origin = convertToWorldSpace(rect.origin);
+    return rect.containsPoint(pos);
+}
+
 bool CCLongPressGestureRecognizerLua::ccTouchBegan(CCTouch * pTouch, CCEvent * pEvent)
 {
     CCLongPressGestureRecognizer::ccTouchBegan(pTouch, pEvent);
